@@ -3,6 +3,7 @@ import "../styles/App.scss";
 
 import Header from "./layout/Header";
 import CharacterList from "./listing/characterList";
+import Footer from "./layout/Footer";
 
 function App() {
   // -------------------------variables de estado ----------------------------------
@@ -10,7 +11,7 @@ function App() {
 
   // ---------------------------------fetch--------------------------------------
   useEffect(() => {
-    fetch("https://hp-api.onrender.com/api/characters/house/gryffindor")
+    fetch("https://hp-api.onrender.com/api/characters")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -25,6 +26,7 @@ function App() {
       <main className="main">
         <CharacterList allCharacters={allCharacters} />
       </main>
+      <Footer />
     </div>
   );
 }

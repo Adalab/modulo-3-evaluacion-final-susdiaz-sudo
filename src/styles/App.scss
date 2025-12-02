@@ -66,11 +66,18 @@ body {
   font-weight: bold;
 }
 
+.footer {
+  color: rgb(255, 214, 164);
+  font-size: 1.5rem;
+  padding-top: 3rem;
+}
+
 /* Responsivo: 2 columnas en tablet, 1 columna en móvil */
 @media (max-width: 900px) {
   body {
-  padding: 2rem;
-}
+    padding: 2rem;
+  }
+
   .header {
     display: flex;
     justify-content: center;
