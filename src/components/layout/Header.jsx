@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header className="header">
-      <h1 className="title">Plantilla React</h1>
+      <img src="./src/images/harrypotter.png" alt="Hogwarts icon" />
     </header>
   );
 }

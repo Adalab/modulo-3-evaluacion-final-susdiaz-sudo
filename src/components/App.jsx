@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="main">Holis Adalabers!!!</main>
+      <main></main>
     </div>
   );
 }
