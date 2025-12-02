@@ -4,10 +4,13 @@ import "../styles/App.scss";
 import Header from "./layout/Header";
 import CharacterList from "./listing/characterList";
 import Footer from "./layout/Footer";
+import Form from "./listing/form";
 
 function App() {
   // -------------------------variables de estado ----------------------------------
   const [allCharacters, setAllCharacters] = useState([]);
+  const [filterText, setFilterText] = useState("");
+  const [filterHouse, setFilterHouse] = useState("");
 
   // ---------------------------------fetch--------------------------------------
   useEffect(() => {
@@ -15,16 +18,26 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
+
         setAllCharacters(data);
       });
   }, []);
+
+  // ----------------------------filtro de personajes------------------------------
+  const filteredCharacters = allCharacters.filter((eachCharacter) => {
+    const matchesName = eachCharacter.name.toLowerCase().includes(filterText);
+
+    const matchesHouse =
+      filterHouse === "" || eachCharacter.house === filterHouse;
+    return matchesName && matchesHouse;
+  });
 
   return (
     <div>
       <Header />
       <main className="main">
-        <CharacterList allCharacters={allCharacters} />
+        <Form setFilterText={setFilterText} setFilterHouse={setFilterHouse} />
+        <CharacterList allCharacters={filteredCharacters} />
       </main>
       <Footer />
     </div>
