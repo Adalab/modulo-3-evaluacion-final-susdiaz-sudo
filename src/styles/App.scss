@@ -107,6 +107,17 @@ body {
   padding-top: 3rem;
 }
 
+.noResults {
+  color: black;
+  background-color: rgb(255, 214, 164);
+  border-radius: 1rem;
+  margin-inline: 30rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+}
+
 /* Responsivo: 2 columnas en tablet, 1 columna en móvil */
 @media (max-width: 900px) {
   body {
@@ -122,6 +133,11 @@ body {
 
   .characterList {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .noResults {
+    margin-inline: 10rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -148,5 +164,10 @@ body {
     max-width: none;
     width: 100%;
     max-width: 20rem;
+  }
+
+  .noResults {
+    margin-inline: 1rem;
+    font-size: 1.5rem;
   }
 }
