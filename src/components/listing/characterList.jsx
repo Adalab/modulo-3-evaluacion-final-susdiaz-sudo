@@ -2,7 +2,7 @@ import CharacterCard from "./characterCard.jsx";
 
 function CharacterList({ allCharacters = [] }) {
   if (!Array.isArray(allCharacters) || allCharacters.length === 0) {
-    return <p className="noResults">No hay personajes para mostrar.</p>;
+    return <p className="noResults">Character not found</p>;
   }
 
   return (

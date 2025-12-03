@@ -5,6 +5,9 @@ import Header from "./layout/Header";
 import CharacterList from "./listing/characterList";
 import Footer from "./layout/Footer";
 import Form from "./listing/form";
+import CharacterDetailPage from "./pages/characterDetailPage";
+
+import { Routes, Route } from "react-router";
 
 function App() {
   // -------------------------variables de estado ----------------------------------
@@ -17,8 +20,6 @@ function App() {
     fetch("https://hp-api.onrender.com/api/characters")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         setAllCharacters(data);
       });
   }, []);
@@ -32,10 +33,25 @@ function App() {
     return matchesName && matchesHouse;
   });
 
+  const findCharacter = (name) => {
+    allCharacters.find((eachCharacter) => eachCharacter.name === name);
+    return foundCharacter;
+  };
+
   return (
     <div>
       <Header />
       <main className="main">
+        <Routes>
+          <Route
+            path="/characterList"
+            element={<CharacterList allCharacters={filteredCharacters} />}
+          />
+          <Route
+            path="/characterDetail/:name"
+            element={<CharacterDetailPage findCharacter={findCharacter} />}
+          />
+        </Routes>
         <Form setFilterText={setFilterText} setFilterHouse={setFilterHouse} />
         <CharacterList allCharacters={filteredCharacters} />
       </main>

@@ -16,6 +16,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   padding: 3rem;
+  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
 }
 
 .header {
@@ -56,6 +57,7 @@ body {
   border-radius: 50px;
   background-color: rgb(253, 221, 182);
   border-color: rgb(255, 214, 164);
+  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
 }
 
 .houseSelect::placeholder {
@@ -72,6 +74,7 @@ body {
   padding-top: 3rem;
   justify-items: center;
   align-items: start;
+  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
 }
 
 .character {
@@ -80,6 +83,11 @@ body {
   border-radius: 1rem;
   width: 100%;
   max-width: 20rem;
+}
+
+.character a {
+  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
+  text-decoration: none;
 }
 
 .character img {
@@ -101,6 +109,65 @@ body {
   font-weight: bold;
 }
 
+
+.characterDetail {
+  max-width: 1000px;
+  margin: 0 auto 4rem auto;
+}
+
+.characterDetailName {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: black;
+  background-color: rgba(255, 214, 164, 0.95);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.characterDetailContent {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.characterDetailImageWrap {
+  border: solid 0.3rem rgb(255, 214, 164);
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 300px;
+}
+
+.characterDetailImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.characterDetailInfo {
+  border: solid 0.3rem rgb(255, 214, 164);
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.characterDetailInfo p {
+  text-align: left;
+  color: black;
+  background-color: rgb(255, 214, 164);
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
 .footer {
   color: rgb(255, 214, 164);
   font-size: 1.5rem;
@@ -118,7 +185,17 @@ body {
   margin-top: 3rem;
 }
 
-/* Responsivo: 2 columnas en tablet, 1 columna en móvil */
+.notFound {
+  color: black;
+  background-color: rgb(255, 214, 164);
+  border-radius: 1rem;
+  margin-inline: 20rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+}
+
 @media (max-width: 900px) {
   body {
     padding: 2rem;

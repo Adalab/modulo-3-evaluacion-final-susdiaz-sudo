@@ -1,12 +1,21 @@
+import { Link } from "react-router";
+
 function CharacterCard({ eachCharacter }) {
   return (
     <>
-      <img
-        src={eachCharacter.image === "" ? "https://placehold.co/210x295/ffffff/666666/?format=svg&text=" + eachCharacter.name : eachCharacter.image}
-        alt={"Una foto de " + eachCharacter.name}
-      />
-      <p>{eachCharacter.name}</p>
-      <p>{eachCharacter.species}</p>
+      <Link to={"/characterDetail/" + eachCharacter.name}>
+        <img
+          src={
+            eachCharacter.image === ""
+              ? "https://placehold.co/210x295/ffffff/666666/?format=svg&text=" +
+                eachCharacter.name
+              : eachCharacter.image
+          }
+          alt={"Una foto de " + eachCharacter.name}
+        />
+        <p>{eachCharacter.name}</p>
+        <p>{eachCharacter.species}</p>
+      </Link>
     </>
   );
 }
