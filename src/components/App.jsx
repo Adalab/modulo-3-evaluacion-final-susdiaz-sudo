@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/App.scss";
 
 import Header from "./layout/Header";
@@ -16,13 +16,12 @@ function App() {
   const [filterHouse, setFilterHouse] = useState("");
 
   // ---------------------------------fetch--------------------------------------
-  useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
       .then((res) => res.json())
       .then((data) => {
         setAllCharacters(data);
       });
-  }, []);
+
 
   // ----------------------------filtro de personajes------------------------------
   const filteredCharacters = allCharacters.filter((eachCharacter) => {
@@ -34,29 +33,39 @@ function App() {
   });
 
   const findCharacter = (name) => {
-    allCharacters.find((eachCharacter) => eachCharacter.name === name);
+    const foundCharacter = allCharacters.find(
+      (eachCharacter) => eachCharacter.name === name
+    );
     return foundCharacter;
   };
 
   return (
-    <div>
-      <Header />
-      <main className="main">
-        <Routes>
-          <Route
-            path="/characterList"
-            element={<CharacterList allCharacters={filteredCharacters} />}
-          />
-          <Route
-            path="/characterDetail/:name"
-            element={<CharacterDetailPage findCharacter={findCharacter} />}
-          />
-        </Routes>
-        <Form setFilterText={setFilterText} setFilterHouse={setFilterHouse} />
-        <CharacterList allCharacters={filteredCharacters} />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div>
+            <Header />
+            <main className="main">
+              <Form
+                setFilterText={setFilterText}
+                setFilterHouse={setFilterHouse}
+              />
+              <CharacterList allCharacters={filteredCharacters} filterText={filterText} />
+            </main>
+            <Footer />
+          </div>
+        }
+      />
+      <Route
+        path="/characterList"
+        element={<CharacterList allCharacters={filteredCharacters} />}
+      />
+      <Route
+        path="/characterDetail/:name"
+        element={<CharacterDetailPage findCharacter={findCharacter} />}
+      />
+    </Routes>
   );
 }
 

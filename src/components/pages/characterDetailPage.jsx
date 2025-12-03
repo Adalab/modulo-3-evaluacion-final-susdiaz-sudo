@@ -2,13 +2,14 @@ import { useParams, Link } from "react-router";
 
 function CharacterDetailPage({ findCharacter }) {
   const { name } = useParams();
+
   const foundCharacter = findCharacter(name);
 
   if (foundCharacter === undefined) {
     return (
       <>
         <p className="notFound">Character not found</p>
-        <Link to="/">Return to character list</Link>
+        <Link to="/characterList">Return to character list</Link>
       </>
     );
   }
@@ -32,23 +33,21 @@ function CharacterDetailPage({ findCharacter }) {
         </div>
 
         <div className="characterDetailInfo">
-          <p>
-            <strong>Alternate name:</strong> {foundCharacter.alternate_names}
+          <p> 
+            Alternate name: 
+            {foundCharacter.alternate_names?.length > 0
+              ? foundCharacter.alternate_names
+              : "None"}
           </p>
-          <p>
-            <strong>Species:</strong> {foundCharacter.species}
-          </p>
-          <p>
-            <strong>Gender:</strong> {foundCharacter.gender}
-          </p>
-          <p>
-            <strong>House:</strong> {foundCharacter.house}
-          </p>
-          <p>
-            <strong>Alive:</strong> {String(foundCharacter.alive)}
-          </p>
+          <p>Species: {foundCharacter.species}</p>
+          <p>Gender: {foundCharacter.gender}</p>
+          <p>House: {foundCharacter.house}</p>
+          <p>Alive: {String(foundCharacter.alive)}</p>
         </div>
       </div>
+      <Link className="returnLink" to="/">
+        Return to character list
+      </Link>
     </section>
   );
 }

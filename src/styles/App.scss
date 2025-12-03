@@ -101,14 +101,13 @@ body {
 .character p {
   text-align: center;
   color: black;
-  background-color: rgb(255, 214, 164);
+  background-color: rgb(253, 221, 182);
   margin-top: 0.5rem;
   padding: 0.3rem;
   border-radius: 0.5rem;
   font-size: 1.3rem;
   font-weight: bold;
 }
-
 
 .characterDetail {
   max-width: 1000px;
@@ -118,9 +117,12 @@ body {
 .characterDetailName {
   text-align: center;
   margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
   color: black;
-  background-color: rgba(255, 214, 164, 0.95);
-  display: inline-block;
+  background-color: rgb(253, 221, 182);
+  display: block;
+  width: fit-content;
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
   font-size: 2rem;
@@ -129,16 +131,19 @@ body {
 
 .characterDetailContent {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px 300px;
   gap: 2rem;
   align-items: start;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .characterDetailImageWrap {
   border: solid 0.3rem rgb(255, 214, 164);
   padding: 1rem;
   border-radius: 1rem;
-  max-width: 300px;
+  width: 300px;
+  height: fit-content;
 }
 
 .characterDetailImage {
@@ -151,21 +156,40 @@ body {
 }
 
 .characterDetailInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: solid 0.3rem rgb(255, 214, 164);
   padding: 1rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.6);
+  width: 300px;
+  height: fit-content;
 }
 
 .characterDetailInfo p {
-  text-align: left;
+  text-align: center;
   color: black;
-  background-color: rgb(255, 214, 164);
+  background-color: rgb(253, 221, 182);
   margin-top: 0.5rem;
   padding: 0.4rem;
   border-radius: 0.5rem;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.returnLink {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-inline: 20rem;
+  color: black;
+  background-color: rgb(255, 214, 164);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
 }
 
 .footer {

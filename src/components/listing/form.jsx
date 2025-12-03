@@ -4,10 +4,12 @@ function Form({ setFilterText, setFilterHouse }) {
   };
 
   const handleInputFilter = (ev) => {
+    ev.preventDefault();
     setFilterText(ev.target.value);
   };
 
   const handleHouseFilter = (ev) => {
+    ev.preventDefault();
     setFilterHouse(ev.target.value);
   };
 
