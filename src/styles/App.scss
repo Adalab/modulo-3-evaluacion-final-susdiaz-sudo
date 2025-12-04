@@ -67,6 +67,20 @@ body {
   font-weight: $font-weight-bold;
 }
 
+.genderSelect {
+  text-align: center;
+  padding-block: 0.2rem;
+  border-radius: 3.1rem;
+  background-color: $color-primary;
+  border-color: $color-primary-light;
+  cursor: $cursor-wand;
+}
+
+.genderSelect::placeholder {
+  color: $color-text;
+  font-weight: $font-weight-bold;
+}
+
 .characterList {
   width: 100%;
   display: grid;
@@ -227,12 +241,12 @@ body {
 .noResults,
 .notFound {
   color: $color-text;
-  background-color: $color-primary-light;
   border-radius: 1rem;
   font-size: 2rem;
   font-weight: $font-weight-bold;
   text-align: center;
   margin-top: 3rem;
+  margin-inline: 20rem;
 }
 
 @media (max-width: 900px) {

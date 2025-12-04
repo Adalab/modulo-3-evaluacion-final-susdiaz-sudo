@@ -14,6 +14,7 @@ function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [filterText, setFilterText] = useState("");
   const [filterHouse, setFilterHouse] = useState("");
+  const [filterGender, setFilterGender] = useState("");
 
   // ---------------------------------fetch--------------------------------------
   useEffect(() => {
@@ -30,7 +31,11 @@ function App() {
 
     const matchesHouse =
       filterHouse === "" || eachCharacter.house === filterHouse;
-    return matchesName && matchesHouse;
+
+    const matchesGender =
+      filterGender === "" || eachCharacter.gender === filterGender;
+
+    return matchesName && matchesHouse && matchesGender;
   });
 
   const findCharacter = (id) => {
@@ -51,8 +56,10 @@ function App() {
               <Form
                 setFilterText={setFilterText}
                 setFilterHouse={setFilterHouse}
+                setFilterGender={setFilterGender}
                 filterText={filterText}
                 filterHouse={filterHouse}
+                filterGender={filterGender}
               />
               <CharacterList
                 allCharacters={filteredCharacters}
