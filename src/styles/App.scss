@@ -21,27 +21,98 @@ body {
   cursor: $cursor-wand;
 }
 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header,
+.formSection,
+.characterList,
+.characterDetail {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-name: fadeUp;
+  animation-duration: 900ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
 .header {
-  display: flex;
-  justify-content: center;
-  height: 20rem;
+  animation-delay: 0.5s;
+}
+
+.formSection {
+  animation-delay: 1.5s;
+}
+
+.characterList {
+  animation-delay: 2.5s;
+}
+
+.characterDetail {
+  animation-delay: 0.2s;
 }
 
 .main {
   margin-bottom: 10rem;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  height: 20rem;
+}
+
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.formLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formRight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.formRight .houseSelect,
+.formRight .genderSelect {
+  width: 100%;
+  max-width: 18rem;
+}
+
+.formReset{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
 .characterInput {
   text-align: center;
-  padding-inline: 5rem;
+  padding-inline: 8rem;
   padding-block: 0.2rem;
   border-radius: 3.1rem;
   background-color: $color-primary;
@@ -79,6 +150,17 @@ body {
 .genderSelect::placeholder {
   color: $color-text;
   font-weight: $font-weight-bold;
+}
+
+.reset {
+  text-align: center;
+  padding: 0.3rem 5rem;
+  border-radius: 3.1rem;
+  background-color: $color-primary-light;
+  border: none;
+  color: $color-text;
+  font-weight: $font-weight-bold;
+  cursor: $cursor-wand;
 }
 
 .characterList {
@@ -259,6 +341,16 @@ body {
     display: flex;
     justify-content: center;
     height: 13rem;
+  }
+
+  .form__row {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .form__right {
+    flex-direction: row;
+    gap: 0.6rem;
   }
 
   .characterList {

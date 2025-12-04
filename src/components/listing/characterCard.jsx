@@ -23,8 +23,7 @@ function CharacterCard({ eachCharacter }) {
             ? "🦅"
             : eachCharacter.house === "Slytherin"
             ? "🐍"
-            : ""
-            }
+            : ""}
         </span>
         <p>{eachCharacter.name}</p>
         <p>{eachCharacter.species}</p>

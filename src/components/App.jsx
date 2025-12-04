@@ -63,7 +63,9 @@ function App() {
               />
               <CharacterList
                 allCharacters={filteredCharacters}
-                filterText={filterText}
+                hasFilter={
+                  filterText !== "" || filterHouse !== "" || filterGender !== ""
+                }
               />
             </main>
             <Footer />
@@ -72,7 +74,14 @@ function App() {
       />
       <Route
         path="/characterList"
-        element={<CharacterList allCharacters={filteredCharacters} />}
+        element={
+          <CharacterList
+            allCharacters={filteredCharacters}
+            hasFilter={
+              filterText !== "" || filterHouse !== "" || filterGender !== ""
+            }
+          />
+        }
       />
       <Route
         path="/characterDetail/:id"

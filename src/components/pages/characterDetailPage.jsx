@@ -31,7 +31,6 @@ function CharacterDetailPage({ findCharacter }) {
   ];
 
   console.log(foundCharacter);
-  
 
   return (
     <section className="characterDetail">
