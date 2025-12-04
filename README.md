@@ -15,24 +15,23 @@ La idea principal es dar vida a un pequeño grimorio digital donde explorar deta
 
 🧙‍♂️ Estructura del grimorio
 
-harry-potter/
-│
-├── public/            # Varita mágica 
-├── src/               # Donde viven los hechizos y encantamientos principales  
-│   ├── components/    # Secciones del grimorio (lista, detalle, etc.) 
-        ├── layout
-            ├── Footer.jsx
-            ├── Header.jsx
-        ├── listing
-            ├── charactersCard.jsx  
-            ├── charactersList.jsx  
-            ├── form.jsx   
-        ├── pages
-            ├── charactersDetailPages.jsx   
-│   ├── styles/        # Pociones de estilo (SCSS/CSS)  
-│   ├── App.jsx        # Hechizo que conecta toda la magia  
-│   └── index.jsx      # Puerta de entrada al mundo mágico  
-└── README.md          # Este pergamino  
+    │── /public/             # Varita mágica 
+    └── /src/                # Donde viven los hechizos y encantamientos principales  
+       ├── components/       # Secciones del grimorio (lista, detalle, etc.) 
+          ├──layout/
+                  ├──header.jsx
+                  ├──footer..jsx
+          ├──listing/
+                  ├── charactersCard.jsx     
+                  ├── charactersList.jsx 
+                  ├── form.jsx  
+          ├── pages/
+                  ├── charactersDetailPages.jsx
+          ├── styles/       # Pociones de estilo (SCSS/CSS)  
+          ├── App.jsx       # Hechizo que conecta toda la magia 
+          ├── index.jsx     # Puerta de entrada al mundo mágico  
+    |__README.md            # Este pergamino  
+
 
 🔮 Herramientas encantadas utilizadas
 
