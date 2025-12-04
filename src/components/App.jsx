@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/App.scss";
 
 import Header from "./layout/Header";
@@ -16,12 +16,13 @@ function App() {
   const [filterHouse, setFilterHouse] = useState("");
 
   // ---------------------------------fetch--------------------------------------
+  useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
       .then((res) => res.json())
       .then((data) => {
         setAllCharacters(data);
       });
-
+  }, []);
 
   // ----------------------------filtro de personajes------------------------------
   const filteredCharacters = allCharacters.filter((eachCharacter) => {
@@ -50,8 +51,13 @@ function App() {
               <Form
                 setFilterText={setFilterText}
                 setFilterHouse={setFilterHouse}
+                filterText={filterText}
+                filterHouse={filterHouse}
               />
-              <CharacterList allCharacters={filteredCharacters} filterText={filterText} />
+              <CharacterList
+                allCharacters={filteredCharacters}
+                filterText={filterText}
+              />
             </main>
             <Footer />
           </div>

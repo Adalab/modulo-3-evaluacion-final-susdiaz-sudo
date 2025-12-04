@@ -9,10 +9,26 @@ function CharacterDetailPage({ findCharacter }) {
     return (
       <>
         <p className="notFound">Character not found</p>
-        <Link to="/characterList">Return to character list</Link>
+        <Link className="returnLink" to="/">
+          Return to character list
+        </Link>
       </>
     );
   }
+
+  const details = [
+    {
+      label: "Alternate name",
+      value:
+        foundCharacter.alternate_names?.length > 0
+          ? foundCharacter.alternate_names.join(", ")
+          : "None",
+    },
+    { label: "Species", value: foundCharacter.species || "Unknown" },
+    { label: "Gender", value: foundCharacter.gender || "Unknown" },
+    { label: "House", value: foundCharacter.house || "Unknown" },
+    { label: "Alive", value: String(foundCharacter.alive) },
+  ];
 
   return (
     <section className="characterDetail">
@@ -33,16 +49,14 @@ function CharacterDetailPage({ findCharacter }) {
         </div>
 
         <div className="characterDetailInfo">
-          <p> 
-            Alternate name: 
-            {foundCharacter.alternate_names?.length > 0
-              ? foundCharacter.alternate_names
-              : "None"}
-          </p>
-          <p>Species: {foundCharacter.species}</p>
-          <p>Gender: {foundCharacter.gender}</p>
-          <p>House: {foundCharacter.house}</p>
-          <p>Alive: {String(foundCharacter.alive)}</p>
+          <ul className="characterDetailsList">
+            {details.map((detail) => (
+              <li key={detail.label} className="characterDetailItem">
+                <span className="detailLabel">{detail.label}:</span>{" "}
+                <span className="detailValue">{detail.value}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <Link className="returnLink" to="/">

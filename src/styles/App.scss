@@ -16,7 +16,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   padding: 3rem;
-  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
+  cursor: url("/wand.cur"), url("/wand.png") 16 16, pointer;
 }
 
 .header {
@@ -41,7 +41,7 @@ body {
   text-align: center;
   padding-inline: 5rem;
   padding-block: 0.2rem;
-  border-radius: 50px;
+  border-radius: 3.1rem;
   background-color: rgb(253, 221, 182);
   border-color: rgb(255, 214, 164);
 }
@@ -54,10 +54,10 @@ body {
 .houseSelect {
   text-align: center;
   padding-block: 0.2rem;
-  border-radius: 50px;
+  border-radius: 3.1rem;
   background-color: rgb(253, 221, 182);
   border-color: rgb(255, 214, 164);
-  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
+  cursor: url("/wand.cur"), url("/wand.png") 16 16, pointer;
 }
 
 .houseSelect::placeholder {
@@ -74,7 +74,7 @@ body {
   padding-top: 3rem;
   justify-items: center;
   align-items: start;
-  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
+  cursor: url("/wand.cur"), url("/wand.png") 16 16, pointer;
 }
 
 .character {
@@ -86,7 +86,7 @@ body {
 }
 
 .character a {
-  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
+  cursor: url("/wand.cur"), url("/wand.png") 16 16, pointer;
   text-decoration: none;
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 .characterDetail {
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 0 auto 4rem auto;
 }
 
@@ -131,7 +131,7 @@ body {
 
 .characterDetailContent {
   display: grid;
-  grid-template-columns: 300px 300px;
+  grid-template-columns: 18.75rem 18.75rem;
   gap: 2rem;
   align-items: start;
   justify-content: center;
@@ -142,7 +142,7 @@ body {
   border: solid 0.3rem rgb(255, 214, 164);
   padding: 1rem;
   border-radius: 1rem;
-  width: 300px;
+  width: 18.7rem;
   height: fit-content;
 }
 
@@ -162,19 +162,28 @@ body {
   border: solid 0.3rem rgb(255, 214, 164);
   padding: 1rem;
   border-radius: 1rem;
-  width: 300px;
+  width: 18.7rem;
   height: fit-content;
 }
 
-.characterDetailInfo p {
+.characterDetailItem {
   text-align: center;
   color: black;
   background-color: rgb(253, 221, 182);
-  margin-top: 0.5rem;
+  margin-block: 0.5rem;
   padding: 0.4rem;
   border-radius: 0.5rem;
-  font-size: 1.1rem;
+  list-style-type: none;
+}
+
+.detailLabel {
+  font-size: 1.3rem;
   font-weight: bold;
+}
+
+.detailValue {
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .returnLink {
@@ -189,7 +198,7 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
-  cursor: url('/wand.cur'), url('/wand.png') 16 16, pointer;
+  cursor: url("/wand.cur"), url("/wand.png") 16 16, pointer;
 }
 
 .footer {
@@ -242,7 +251,7 @@ body {
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 33.75rem) {
   body {
     padding: 1rem;
   }

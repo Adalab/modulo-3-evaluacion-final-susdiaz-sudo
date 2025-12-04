@@ -1,4 +1,4 @@
-function Form({ setFilterText, setFilterHouse }) {
+function Form({ setFilterText, setFilterHouse, filterText = "",  filterHouse = "" }) {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -21,12 +21,14 @@ function Form({ setFilterText, setFilterHouse }) {
         name="filter"
         id="filter"
         placeholder="Find your character..."
+        value={filterText}
         onInput={handleInputFilter}
       />
       <select
         className="houseSelect"
         name="house"
         id="house"
+        value={filterHouse}
         onChange={handleHouseFilter}
       >
         <option value="">🪄 All 🪄</option>
