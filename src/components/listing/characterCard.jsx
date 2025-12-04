@@ -13,6 +13,19 @@ function CharacterCard({ eachCharacter }) {
           }
           alt={"Una foto de " + eachCharacter.name}
         />
+        <span className="statusIcon">{eachCharacter.alive ? "👤" : "☠️"}</span>
+        <span className="houseIcon">
+          {eachCharacter.house === "Gryffindor"
+            ? "🦁"
+            : eachCharacter.house === "Hufflepuff"
+            ? "🦡"
+            : eachCharacter.house === "Ravenclaw"
+            ? "🦅"
+            : eachCharacter.house === "Slytherin"
+            ? "🐍"
+            : ""
+            }
+        </span>
         <p>{eachCharacter.name}</p>
         <p>{eachCharacter.species}</p>
       </Link>
