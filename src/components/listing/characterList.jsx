@@ -7,8 +7,8 @@ function CharacterList({ allCharacters = [], filterText = "" }) {
 
   return (
     <ul className="characterList">
-      {allCharacters.map((eachCharacter, index) => (
-        <li key={eachCharacter.id ?? index} className="character">
+      {allCharacters.map((eachCharacter) => (
+        <li key={eachCharacter.id} className="character">
           <CharacterCard eachCharacter={eachCharacter} />
         </li>
       ))}

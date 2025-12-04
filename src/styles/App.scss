@@ -211,7 +211,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: url("/wand.cur"), url("/wand.png") 16 16, pointer;
 }
@@ -222,22 +222,11 @@ body {
   padding-top: 3rem;
 }
 
-.noResults {
-  color: black;
-  background-color: rgb(255, 214, 164);
-  border-radius: 1rem;
-  margin-inline: 30rem;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 3rem;
-}
-
+.noResults,
 .notFound {
   color: black;
   background-color: rgb(255, 214, 164);
   border-radius: 1rem;
-  margin-inline: 20rem;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;

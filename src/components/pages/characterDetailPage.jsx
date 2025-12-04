@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router";
 
 function CharacterDetailPage({ findCharacter }) {
-  const { name } = useParams();
+  const { id } = useParams();
 
-  const foundCharacter = findCharacter(name);
+  const foundCharacter = findCharacter(id);
 
   if (foundCharacter === undefined) {
     return (
@@ -29,6 +29,9 @@ function CharacterDetailPage({ findCharacter }) {
     { label: "House", value: foundCharacter.house || "Unknown" },
     { label: "Alive", value: String(foundCharacter.alive) },
   ];
+
+  console.log(foundCharacter);
+  
 
   return (
     <section className="characterDetail">

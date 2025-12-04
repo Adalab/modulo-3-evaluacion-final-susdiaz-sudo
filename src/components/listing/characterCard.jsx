@@ -3,7 +3,7 @@ import { Link } from "react-router";
 function CharacterCard({ eachCharacter }) {
   return (
     <>
-      <Link to={"/characterDetail/" + eachCharacter.name}>
+      <Link to={"/characterDetail/" + eachCharacter.id}>
         <img
           src={
             eachCharacter.image === ""

@@ -33,9 +33,9 @@ function App() {
     return matchesName && matchesHouse;
   });
 
-  const findCharacter = (name) => {
+  const findCharacter = (id) => {
     const foundCharacter = allCharacters.find(
-      (eachCharacter) => eachCharacter.name === name
+      (eachCharacter) => eachCharacter.id === id
     );
     return foundCharacter;
   };
@@ -68,7 +68,7 @@ function App() {
         element={<CharacterList allCharacters={filteredCharacters} />}
       />
       <Route
-        path="/characterDetail/:name"
+        path="/characterDetail/:id"
         element={<CharacterDetailPage findCharacter={findCharacter} />}
       />
     </Routes>
