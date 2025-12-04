@@ -1,7 +1,9 @@
+import harrypotter from "../../images/harrypotter.png";
+
 function Header() {
   return (
     <header className="header">
-      <img src="./src/images/harrypotter.png" alt="Hogwarts icon" />
+      <img src={harrypotter} alt="Hogwarts icon" />
     </header>
   );
 }
